@@ -2,7 +2,8 @@ package moo2.model;
 
 public enum Technology implements ITechnology {
 
-	REINFORCED_HULL(ResearchLine.FERTIGUNG, 0);
+	REINFORCED_HULL(ResearchLine.FERTIGUNG, 0)
+	;
 
 	ResearchLine researchLine;
 	int researchStep; // in which step of its research line is this building contained

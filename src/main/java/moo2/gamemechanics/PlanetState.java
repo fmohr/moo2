@@ -75,11 +75,77 @@ public class PlanetState {
 		return this.population;
 	}
 
+	public int getPopulationRound() {
+		return (int)Math.floor(this.population / Math.pow(10, 6));
+	}
+
 	public Collection<Building> getBuildings() {
 		return this.buildings;
 	}
 
 	public int getAccumulatedConstructionPoints() {
 		return this.accumulatedConstructionPoints;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = 1;
+		result = prime * result + this.accumulatedConstructionPoints;
+		result = prime * result + (this.artifactWorld ? 1231 : 1237);
+		result = prime * result + ((this.buildings == null) ? 0 : this.buildings.hashCode());
+		result = prime * result + ((this.climate == null) ? 0 : this.climate.hashCode());
+		result = prime * result + (this.highGravity ? 1231 : 1237);
+		result = prime * result + (this.lowGravity ? 1231 : 1237);
+		result = prime * result + ((this.minerals == null) ? 0 : this.minerals.hashCode());
+		result = prime * result + this.population;
+		result = prime * result + ((this.size == null) ? 0 : this.size.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(final Object obj) {
+		if (this == obj) {
+			return true;
+		}
+		if (obj == null) {
+			return false;
+		}
+		if (this.getClass() != obj.getClass()) {
+			return false;
+		}
+		PlanetState other = (PlanetState) obj;
+		if (this.accumulatedConstructionPoints != other.accumulatedConstructionPoints) {
+			return false;
+		}
+		if (this.artifactWorld != other.artifactWorld) {
+			return false;
+		}
+		if (this.buildings == null) {
+			if (other.buildings != null) {
+				return false;
+			}
+		} else if (!this.buildings.equals(other.buildings)) {
+			return false;
+		}
+		if (this.climate != other.climate) {
+			return false;
+		}
+		if (this.highGravity != other.highGravity) {
+			return false;
+		}
+		if (this.lowGravity != other.lowGravity) {
+			return false;
+		}
+		if (this.minerals != other.minerals) {
+			return false;
+		}
+		if (this.population != other.population) {
+			return false;
+		}
+		if (this.size != other.size) {
+			return false;
+		}
+		return true;
 	}
 }

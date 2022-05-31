@@ -2,10 +2,11 @@ package moo2.model;
 
 public enum Building implements ITechnology {
 
+	COLLECT(0, Integer.MAX_VALUE, null, -1),
 	WOHNUNGEN(0, Integer.MAX_VALUE, null, -1), AUTOMATED_FACTORIES(1, 60, ResearchLine.FERTIGUNG, 1),
 	BIOSPHERES(1, 60, ResearchLine.BIOLOGIE, 0),
-	INFANTERYBARRACKS(1, 10, null, -1),
-	COLONY_BASE(0, 18, null, -1),
+	INFANTERYBARRACKS(1, 60, null, -1),
+	COLONY_BASE(0, 200, null, -1),
 	STARBASE(2, 400, null, -1);
 
 	int maintainanceCost;

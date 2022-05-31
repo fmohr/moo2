@@ -45,4 +45,9 @@ public class PlanetAction {
 	public boolean isPurchaseConstruction() {
 		return this.purchaseConstruction;
 	}
+
+	@Override
+	public String toString() {
+		return "PlanetAction [farmers=" + this.farmers + ", workers=" + this.workers + ", scientists=" + this.scientists + ", nextBuild=" + this.nextBuild + ", erasedBuilding=" + this.erasedBuilding + ", purchaseConstruction=" + this.purchaseConstruction + "]";
+	}
 }
